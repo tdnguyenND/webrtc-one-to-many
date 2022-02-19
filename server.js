@@ -17,7 +17,43 @@ app.use(cors(corsOptions))
 
 app.post("/consumer", async ({ body }, res) => {
     const peer = new webrtc.RTCPeerConnection({
-        iceServers: [{urls: "stun:stun.1.google.com:19302"}]
+           iceServers: [
+                {
+                    urls: "stun:hk-turn1.xirsys.com",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:80?transport=udp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:3478?transport=udp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:80?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:3478?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turns:hk-turn1.xirsys.com:443?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turns:hk-turn1.xirsys.com:5349?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+            ]
     });
     const desc = new webrtc.RTCSessionDescription(body.sdp);
     await peer.setRemoteDescription(desc);
@@ -34,7 +70,43 @@ app.post("/consumer", async ({ body }, res) => {
 app.post('/broadcast', async ({ body }, res) => {
     console.log('36')
     const peer = new webrtc.RTCPeerConnection({
-        iceServers: [{urls: "stun:stun.1.google.com:19302"}]
+           iceServers: [
+                {
+                    urls: "stun:hk-turn1.xirsys.com",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:80?transport=udp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:3478?transport=udp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:80?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turn:hk-turn1.xirsys.com:3478?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turns:hk-turn1.xirsys.com:443?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+                {
+                    urls: "turns:hk-turn1.xirsys.com:5349?transport=tcp",
+                    username: "BM2fqgwrCLH8xyCGQgg5mBVS0hHjRXL0g0hbQqxIE-cX9Nq4UsZSnD3PIwyd77z5AAAAAGIRFEVjYW9kdW5nNTY2",
+                    credential: "27231c68-919d-11ec-b184-0242ac120004",
+                },
+            ]
     });
     peer.ontrack = (e) => handleTrackEvent(e, peer);
     const desc = new webrtc.RTCSessionDescription(body.sdp);
