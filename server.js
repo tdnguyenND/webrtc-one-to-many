@@ -14,11 +14,7 @@ app.use(cors())
 
 app.post("/consumer", async ({ body }, res) => {
     const peer = new webrtc.RTCPeerConnection({
-        iceServers: [
-            {
-                urls: "stun:stun.stunprotocol.org"
-            }
-        ]
+        iceServers: [{urls: "stun:stun.1.google.com:19302"}]
     });
     const desc = new webrtc.RTCSessionDescription(body.sdp);
     await peer.setRemoteDescription(desc);
@@ -35,11 +31,7 @@ app.post("/consumer", async ({ body }, res) => {
 app.post('/broadcast', async ({ body }, res) => {
     console.log('36')
     const peer = new webrtc.RTCPeerConnection({
-        iceServers: [
-            {
-                urls: "stun:stun.stunprotocol.org"
-            }
-        ]
+        iceServers: [{urls: "stun:stun.1.google.com:19302"}]
     });
     peer.ontrack = (e) => handleTrackEvent(e, peer);
     const desc = new webrtc.RTCSessionDescription(body.sdp);
