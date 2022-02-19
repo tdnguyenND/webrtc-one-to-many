@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var corsOptions = {
-  origin: 'https://event-hunter-fe.herokuapp.com/',
+  origin: 'https://event-hunter-fe.herokuapp.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions))
